@@ -1,7 +1,7 @@
 package otus.gpb.recyclerview
 
 
-class Chat(
+data class Chat(
     val id: Int = 0,
     val name: String = "Name",
     val group: String = "",
