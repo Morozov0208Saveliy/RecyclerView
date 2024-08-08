@@ -40,13 +40,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun generateList(): List<Chat> {
-        val initialList = Chat.chatList
+        val initialList = Chat.chatList.shuffled()
         val desiredSize = 10
         val list = mutableListOf<Chat>()
-        list.addAll(initialList)
-        while (list.size < desiredSize) {
-            list.addAll(initialList.take(desiredSize - list.size))
-        }
+        list.addAll(initialList.take(desiredSize))
         return list
     }
 
@@ -67,14 +64,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadMoreData() {
-        val start = chatList.size
-        val additionalChats = Chat.chatList.take(10 - start)
+        val additionalChats = Chat.chatList.shuffled().take(pageSize)
         if (additionalChats.isNotEmpty()) {
-            val newChats = additionalChats.map { it.copy() }
-            adapter.addChatList(newChats)
+            adapter.addChatList(additionalChats)
         }
         isLoading = false
     }
+
 
     private fun setupSwipeToDelete() {
         val itemTouchHelper =
