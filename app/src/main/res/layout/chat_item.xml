@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:padding="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="10dp"
+            app:cardCornerRadius="80dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:scaleType="centerCrop"
+                tools:src="@tools:sample/avatars" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textViewNickName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="@dimen/margin_9dp"
+            android:fontFamily="@font/roboto_black"
+            android:text="@string/n_name"
+            android:textColor="@color/black_name_group"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/cardView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/verified"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4dp"
+            app:layout_constraintBottom_toBottomOf="@id/textViewNickName"
+            app:layout_constraintStart_toEndOf="@id/textViewNickName"
+            app:layout_constraintTop_toTopOf="@id/textViewNickName"
+            android:src="@drawable/verified_icon" />
+
+        <ImageView
+            android:id="@+id/muted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4dp"
+            app:layout_constraintBottom_toBottomOf="@id/textViewNickName"
+            app:layout_constraintStart_toEndOf="@id/verified"
+            app:layout_constraintTop_toTopOf="@id/textViewNickName"
+            android:src="@drawable/mute_icon" />
+
+        <TextView
+            android:id="@+id/textViewGroupNickName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4dp"
+            android:fontFamily="@font/roboto_black"
+            android:text="@string/group_name"
+            android:textColor="@color/black_name_group"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/textViewNickName"
+            app:layout_constraintTop_toBottomOf="@id/textViewNickName" />
+
+        <ImageView
+            android:id="@+id/scam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4dp"
+            app:layout_constraintBottom_toBottomOf="@id/textViewNickName"
+            app:layout_constraintStart_toEndOf="@id/muted"
+            app:layout_constraintTop_toTopOf="@id/textViewNickName"
+            android:src="@drawable/scam" />
+
+        <ImageView
+            android:id="@+id/imageInChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:padding="2dp"
+            app:layout_constraintStart_toStartOf="@id/textViewNickName"
+            app:layout_constraintTop_toBottomOf="@id/textViewGroupNickName"
+            android:src="@drawable/image_in_chat" />
+
+        <TextView
+            android:id="@+id/textViewMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/this_last_message"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@id/imageInChat"
+            app:layout_constraintTop_toBottomOf="@id/textViewGroupNickName" />
+
+        <TextView
+            android:id="@+id/textViewMesTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/last_time_message"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/mesCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="133dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="13dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/counter_message"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewMessage"
+            app:layout_constraintTop_toBottomOf="@+id/textViewMesTime" />
+
+        <ImageView
+            android:id="@+id/messegeCheckOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/textViewMesTime"
+            app:layout_constraintEnd_toStartOf="@id/textViewMesTime"
+            app:layout_constraintTop_toTopOf="@id/textViewMesTime"
+            android:src="@drawable/send_message" />
+
+        <ImageView
+            android:id="@+id/messegeDoubleCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/textViewMesTime"
+            app:layout_constraintEnd_toStartOf="@id/textViewMesTime"
+            app:layout_constraintTop_toTopOf="@id/textViewMesTime"
+            android:src="@drawable/message_check" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

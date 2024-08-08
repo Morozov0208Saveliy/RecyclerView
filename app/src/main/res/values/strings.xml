@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RecyclerView</string>
+    <string name="n_name">Name</string>
+    <string name="this_last_message">This last message</string>
+    <string name="last_time_message">11:38 AM</string>
+    <string name="group_name">jija</string>
 </resources>
